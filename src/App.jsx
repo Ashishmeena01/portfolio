@@ -9,6 +9,7 @@ const projects = [
   {
     name: 'Coming Soon',
     year: '2026',
+    path:"#",
     desc: 'Many project which are waiting to go Production.',
     tags: ['Building', 'It', 'with', 'Heart'],
   },
