@@ -44,6 +44,6 @@ Output goes to the `dist/` folder. Deploy it anywhere (Vercel, Netlify, GitHub P
 
 ## Customize
 
-Project and skill data lives in `src/App.jsx`. Page content is split into components under `src/pages/`.
+Project and skill data lives in `src/data/portfolio.js`. Page content is split into components under `src/pages/`.
 
 Colors and fonts are defined in `tailwind.config.js` (`ink`, `paper`, `muted`) if you want to adjust the palette later.
