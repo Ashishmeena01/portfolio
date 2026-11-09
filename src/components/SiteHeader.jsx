@@ -7,26 +7,25 @@ export default function SiteHeader() {
   const [activeLink, setActiveLink] = useState(null);
 
   return (
-    <motion.header className="box-border overflow-hidden z-50 backdrop-blur-md rounded-t-2xl py-2 w-full mx-auto sticky top-1">
-      <div className="w-full h-full absolute left-0 top-0 bg-gradient-to-b from-gray-100 from-20% z-0" />
-      <div className="max-w-5xl gap-52 rounded-md mx-auto px-6 flex items-center justify-between z-10">
-        <a href="#top" className="font-display text-lg tracking-tightest font-extrabold text-white drop-shadow-[0_0.2px_0.65px_rgba(0,0,0,0.8)] z-10">
+    <motion.header className="sticky top-0 z-50 mx-auto w-full border-b border-ink/10 bg-gray-50/95 py-3 backdrop-blur-md">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6">
+        <a href="#top" className="z-10 font-display text-lg font-extrabold tracking-tightest text-ink">
           Dev
         </a>
-        <motion.nav layout className="hidden relative sm:flex items-center gap-10 font-extrabold text-white drop-shadow-[0_0.2px_0.5px_rgba(0,0,0,0.8)]">
+        <motion.nav layout className="hidden items-center gap-8 sm:flex">
           {navigationItems.map((label, index) => (
             <motion.a
               layout
               key={label}
               href={`#${label.toLowerCase()}`}
-              className="cursor-pointer"
+              className="relative cursor-pointer py-2 text-sm font-medium tracking-wide text-ink/65 transition-colors hover:text-ink"
               onMouseEnter={() => setActiveLink(index)}
               onMouseLeave={() => setActiveLink(null)}
             >
               <span>{label}</span>
               <motion.div
-                layoutId="hover"
-                className=""
+                layoutId="nav-indicator"
+                className="absolute inset-x-0 bottom-0 h-0.5 rounded-full bg-ink"
                 style={{ display: activeLink === index ? 'flex' : 'none' }}
               />
             </motion.a>
